@@ -1,0 +1,14 @@
+[Unit]
+Description=Hadoop 3.3.2 Service
+
+[Service]
+Type=oneshot
+User=joseph
+Group=joseph
+ExecStart=/home/joseph/hadoop/sbin/hadoop-service.sh start
+ExecStop=/home/joseph/hadoop/sbin/hadoop-service.sh stop
+RemainAfterExit=yes
+#Restart=always
+
+[Install]
+WantedBy=multi-user.target

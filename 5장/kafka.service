@@ -1,0 +1,15 @@
+[Unit]
+Description=Kafka 3.2 Service
+Requires=zookeeper.service
+After=zookeeper.service
+
+[Service]
+Type=simple
+User=joseph
+Group=joseph
+Environment=JAVA_HOME=/usr/lib/jvm/jdk
+ExecStart=/home/joseph/kafka/bin/kafka-server-start.sh /home/joseph/kafka/config/server.properties
+ExecStop=/home/joseph/kafka/bin/kafka-server-stop.sh
+
+[Install]
+WantedBy=multi-user.target
